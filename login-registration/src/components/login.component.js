@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
 export default class Login extends Component {
     state = {
         email: '',
@@ -17,9 +18,10 @@ export default class Login extends Component {
        
         const emailParam = this.state.email;
         const passwordParam = this.state.password;
-        axios.get('localhost:8080/users/login?email='+emailParam+'&password='+passwordParam)
+        axios.get('http://localhost:8080/users/login?email='+emailParam+'&password='+passwordParam)
             .then(response => {
                 alert(response.data);
+                
             })
   }
     render() {
